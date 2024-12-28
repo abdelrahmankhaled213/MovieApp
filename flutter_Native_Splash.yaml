@@ -1,0 +1,12 @@
+flutter_native_splash:
+  color: "#141221"
+  image: "assets/png/Frame 1.png"
+  android_gravity: center
+
+  android_12:
+    image: "assets/png/Frame 1.png"
+    color: "#141221"
+    android_gravity: center
+
+  android: true
+  ios: true
