@@ -86,7 +86,9 @@ class CustomSearchDelegate extends SearchDelegate {
   ThemeData appBarTheme(BuildContext context) {
     // TODO: implement appBarTheme
     return Theme.of(context).copyWith(
+
       inputDecorationTheme: InputDecorationTheme(
+
         hintStyle: ThemeText.vulcanBodyText2?.copyWith(color: Colors.grey,fontSize: 14.sp),
         border: InputBorder.none,
         focusedBorder: InputBorder.none,
@@ -96,27 +98,42 @@ class CustomSearchDelegate extends SearchDelegate {
           horizontal: Sizes.dimen_10.w ,
         ),
 
-      )
+      ),
+      textTheme:  TextTheme(
+        bodyLarge: TextStyle(
+          color: AppColor.vulcan,
+          fontWeight: FontWeight.w400,
+          fontSize: 14.sp,
+          // Set the search input text color to black
+        ),
+      ),
     );
   }
+
   @override
   List<Widget>? buildActions(BuildContext context) {
 
     return <Widget>[
-     IconButton(
+
+      IconButton(
          onPressed: query.isEmpty?null:
     (){
        query="";
     }
-     , icon: Icon(Icons.clear,color: query.isEmpty?Colors.grey:AppColor.royalblue,))
+     , icon: Icon(Icons.clear,color: query.isEmpty?
+     Colors.grey:AppColor.royalblue,)
+     )
+
    ];
   }
 
   @override
   Widget? buildLeading(BuildContext context) {
+
 return GestureDetector(onTap: (){
   close(context,null);
-},child: Icon(Icons.arrow_back,color: Colors.white,size: Sizes.dimen_14.h));
+}
+,child: Icon(Icons.arrow_back,color: Colors.grey,size: Sizes.dimen_14.h));
   }
 
   @override

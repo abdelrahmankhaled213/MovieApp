@@ -29,7 +29,7 @@ class MovieListViewWidget extends StatelessWidget {
               );
             },
             child: MovieTabCardWidget(
-              movieid: movieList[index].id,
+              movieId: movieList[index].id,
               title: movieList[index].title,
               posterPath: movieList[index].posterPath!,
             ),

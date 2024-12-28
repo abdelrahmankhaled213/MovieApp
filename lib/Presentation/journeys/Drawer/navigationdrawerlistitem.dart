@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class NavigationDrawerListItem extends StatelessWidget {
   final String title;
   final Function() onTap;
-  NavigationDrawerListItem({required this.title, required this.onTap});
+  const NavigationDrawerListItem({required this.title, required this.onTap,super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
           vertical: 8.h,
-          horizontal: 4.w
+          horizontal: 8.w
       ),
       child: GestureDetector(
         onTap: onTap,
@@ -25,7 +27,8 @@ class NavigationDrawerListItem extends StatelessWidget {
               )
             ],
           ),
-          child: ListTile(title: Text(title, style: TextStyle(fontSize: 12.sp,color: Colors.white,fontWeight: FontWeight.w600),)),
+          child: ListTile(title: Text(title
+            , style: TextStyle(fontSize: 16.sp,color: Colors.white,fontWeight: FontWeight.w600),)),
         ),
       ),
     );

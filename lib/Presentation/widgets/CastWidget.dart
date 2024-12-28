@@ -22,26 +22,34 @@ class CastWidget extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14.0.r),
             ),
-              child: CachedNetworkImage(imageUrl: ApiConstants.imageBaseUrl + cast.profilePath!,
-                errorWidget: (context, url, error) {
-                return Icon(Icons.error,size: Sizes.dimen_150,
-                  color: AppColor.royalblue,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(25.r),
+                child: CachedNetworkImage(
 
-                );
-              },
-              placeholder: (context, url) {
-                return Image.asset( "assets/png/Animation - 1720792156981 (1).gif"
-                  ,fit: BoxFit.cover,height: Sizes.dimen_100.h,);
-              },)
+                  imageUrl: ApiConstants.imageBaseUrl + cast.profilePath!,
+                  errorWidget: (context, url, error) {
+                  return const Icon(
+                    Icons.error,size: Sizes.dimen_150,
+                    color: AppColor.royalblue,
+
+                  );
+                },
+                placeholder: (context, url) {
+                  return Image.asset( "assets/png/Animation - 1720792156981 (1).gif"
+                    ,fit: BoxFit.cover,height: Sizes.dimen_100.h,);
+                },),
+              )
           ),
           Positioned (
             bottom: 0,
             child: Container(
                 height: 30.h,
-                decoration: BoxDecoration(
+                decoration: const
+                BoxDecoration(
                   color: Colors.black45,
                 ),
                 width: 100.w,
+
                 child: Center(child: Align(alignment: Alignment.center,
                     child: Text(cast.name,style: TextStyle(
                       fontSize: 10.sp,

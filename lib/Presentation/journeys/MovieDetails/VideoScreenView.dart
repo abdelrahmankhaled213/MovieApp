@@ -8,8 +8,9 @@ import 'package:shimmer/shimmer.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 class VideoScreenView extends StatefulWidget {
 
-  List<TrailersEntity>? videos;
-  VideoScreenView( {required this.videos,super.key});
+  final List<TrailersEntity>? videos;
+
+  const VideoScreenView( {required this.videos,super.key});
 
   @override
   State<VideoScreenView> createState() => _VideoScreenViewState();
@@ -23,6 +24,7 @@ class _VideoScreenViewState extends State<VideoScreenView> {
     // TODO: implement initState
     super.initState();
 if(widget.videos!=null){
+
   if(widget.videos!.length>0){
     controller = YoutubePlayerController(
       initialVideoId: widget.videos?[0].key??'',
@@ -40,7 +42,7 @@ if(widget.videos!=null){
     return Scaffold(
      appBar: AppBar(title: Text("Watch Trailers",style: TextStyle(
        color: Colors.white,
-       fontSize: 10.sp,
+       fontSize: 20.sp,
      ),),
        backgroundColor: Colors.transparent,
 
@@ -48,6 +50,7 @@ if(widget.videos!=null){
        ),
       body:widget.videos!=null&&
           widget.videos!.length>0?
+
       Expanded(
         flex: 1,
         child: YoutubePlayerBuilder(
@@ -58,11 +61,13 @@ if(widget.videos!=null){
             progressIndicatorColor: Colors.amber,
             showVideoProgressIndicator: true,
             progressColors: const ProgressBarColors(
-              playedColor: Colors.amber,
-              handleColor: Colors.amberAccent,
+              playedColor: AppColor.violet,
+              handleColor: AppColor.royalblue,
             ),
           ),
           builder: (context, player) {
+
+
             return  SingleChildScrollView(
               child: Column(
                 children: [
@@ -102,7 +107,7 @@ if(widget.videos!=null){
                                   padding:  EdgeInsets.symmetric(horizontal: 5.w),
                                   child: Text(widget.videos![i].title,
                                     style: TextStyle(
-                                      fontSize: 10.sp,
+                                      fontSize: 15.sp,
                                       color: Colors.white ,
                                     ),),
                                 ),

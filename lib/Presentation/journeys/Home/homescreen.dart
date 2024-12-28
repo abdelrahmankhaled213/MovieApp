@@ -18,9 +18,14 @@ import 'package:movie_app/Presentation/journeys/movie_tabbed/Movie_tabbar.dart';
 import 'package:movie_app/Presentation/widgets/ErrorCarouselWidget.dart';
 import 'package:movie_app/Presentation/widgets/MovieCarouselWidget.dart';
 import 'package:shimmer/shimmer.dart';
+
 class HomeScreen extends StatefulWidget {
+
+  const HomeScreen({super.key});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
+
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -43,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
+
       providers: [
 
         BlocProvider(
@@ -73,10 +79,12 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
 
       child: Scaffold(
-        drawer: DrawerHomeScreen(),
+        drawer: const DrawerHomeScreen(),
         body:
         BlocBuilder<MovieCarouselBloc,MovieCarouselState>(
+
           builder: (context, state) {
+
             if (state is MovieCarouselLoadedState) {
 
               return Stack(
@@ -117,6 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
             }
 
             return SizedBox(
+
               width: MediaQuery.of(context)
                   .size.width,
               height: MediaQuery.of(context).size.height,

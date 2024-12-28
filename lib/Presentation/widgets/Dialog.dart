@@ -17,44 +17,43 @@ class CustomDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Dialog(
-      backgroundColor: AppColor.vulcan,
-      elevation: Sizes.dimen_32.sp,
-      insetPadding: EdgeInsets.all(Sizes.dimen_32.sp),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(Sizes.dimen_8.sp),
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-       Text(text,
-         textAlign: TextAlign.center,style: TextStyle(
-         fontWeight: FontWeight.w400,
-         fontSize: Sizes.dimen_8.sp,
-       ),
-       ),
-          Padding(
-            padding:  EdgeInsets.symmetric(vertical: Sizes.dimen_8.h),
-            child: SizedBox(
-              height: Sizes.dimen_64.h,
-              child: Image.asset("assets/png/tmdb_logo.png")
+    return Padding(
+      padding:  EdgeInsets.symmetric(horizontal: Sizes.dimen_16.w,
+      vertical: Sizes.dimen_10.h),
+      child: Dialog(
+        backgroundColor: AppColor.vulcan,
+        elevation: Sizes.dimen_32.sp,
+        insetPadding: EdgeInsets.all(Sizes.dimen_32.sp),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(Sizes.dimen_8.sp),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+
+            Padding(
+              padding:  EdgeInsets.symmetric(vertical: Sizes.dimen_8.h),
+              child: SizedBox(
+                height: Sizes.dimen_64.h,
+                child: Image.asset("assets/png/tmdb_logo.png")
+              ),
             ),
-          ),
-          Text(description,style:  TextStyle(
-            fontWeight: FontWeight.w400,
-            fontSize: Sizes.dimen_16.sp,
+            Text(description,style:  TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: Sizes.dimen_16.sp,
 
 
-          ),),
-          SizedBox(
-            height: Sizes.dimen_8.h,
-          ),
+            ),),
+            SizedBox(
+              height: Sizes.dimen_8.h,
+            ),
 
-    CustomElevatedButton(text: "okay",onTap: (){
-      Navigator.pop(context);
-    },)
+      CustomElevatedButton(text: "okay",onTap: (){
+        Navigator.pop(context);
+      },)
 
-        ],
+          ],
+        ),
       ),
     );
   }

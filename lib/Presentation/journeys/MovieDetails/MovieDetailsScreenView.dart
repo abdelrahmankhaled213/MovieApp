@@ -15,7 +15,7 @@ class MovieDetailsScreenView extends StatefulWidget {
 
   final int movieId;
 
-  const MovieDetailsScreenView({ required this.movieId});
+  const MovieDetailsScreenView({ required this.movieId,super.key});
 
   @override
   State<MovieDetailsScreenView> createState() => _MovieDetailsScreenViewState();
@@ -73,8 +73,11 @@ class _MovieDetailsScreenViewState extends State<MovieDetailsScreenView> {
   Widget whichState(MovieDetailsState state){
 
     if(state is  MovieDetailsLoading) {
+
       return const
-      Center(child: CircularProgressIndicator()
+      Center(child: CircularProgressIndicator(
+        color: Colors.white,
+      )
         ,);
 
     }

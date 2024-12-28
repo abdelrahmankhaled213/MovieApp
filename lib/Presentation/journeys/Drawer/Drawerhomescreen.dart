@@ -7,6 +7,9 @@ import 'package:movie_app/Presentation/widgets/Dialog.dart';
 import 'package:movie_app/Presentation/widgets/MovieLogo.dart';
 import 'package:wiredash/wiredash.dart';
 class DrawerHomeScreen extends StatelessWidget {
+
+  const DrawerHomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -40,13 +43,16 @@ class DrawerHomeScreen extends StatelessWidget {
                   ),
                        NavigationDrawerListItem(
                          onTap: () {
+
                Navigator.push(context, MaterialPageRoute(builder: (context) {
                  return FavouriteScreenView();
                },));
                          },
                          title: "Favourites Movies"
                        ),
+
                   SizedBox(height: 10.h,),
+
                   NavigationDrawerListItem(
                     onTap: () {
                       Navigator.of(context).pop();
@@ -73,7 +79,8 @@ class DrawerHomeScreen extends StatelessWidget {
 }
  showDialogFun(BuildContext context){
   return showDialog(context: context, builder: (context) {
-    return CustomDialog(
+
+    return const CustomDialog(
       description: "This is product uses the TMDB API but is not endorsed or certified by TMDB.This app is developed by for education purpose.",
 
       text: "About",

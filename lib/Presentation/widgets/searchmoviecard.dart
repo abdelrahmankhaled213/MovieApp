@@ -35,18 +35,21 @@ class SearchMovieCardContent extends StatelessWidget{
   final String title;
   final String image;
   final String description;
-  SearchMovieCardContent({
+
+  const SearchMovieCardContent({
     required this.moveId,
    required this.title,
     required this.description,
     required this.image,
-
+super.key
   });
+
   @override
   Widget build(BuildContext context) {
     return Row(
 children: [
-  ClipRRect(borderRadius: BorderRadius.circular(15.r),
+  ClipRRect(
+      borderRadius: BorderRadius.circular(15.r),
       child: GestureDetector(
         onTap: (){
           Navigator.push(
@@ -67,6 +70,7 @@ children: [
         },
         ),
       )),
+
   SizedBox(
     width: Sizes.dimen_14.w,
   ),
@@ -75,14 +79,14 @@ children: [
        mainAxisAlignment: MainAxisAlignment.center,
       children: [
       Text(title,style: TextStyle(
-        color: Colors.grey,fontSize: 8.sp
+        color: Colors.grey,fontSize: 14.sp
         ,fontWeight: FontWeight.w700
       ),),
       SizedBox(
         height: 10.h,
       ) ,
         Text(description,style:TextStyle(
-          fontSize: 6.sp,
+          fontSize: 12.sp,
           color: Colors.grey,
           fontWeight: FontWeight.w300
         ),

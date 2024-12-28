@@ -109,12 +109,14 @@ class BigPoster extends StatelessWidget {
                     right: 0.w,
                     bottom: 0.h,
                     child: ListTile(
+
                       title: Text(movieDetails.title,
                         style: ThemeText.vulcanSubtitle1?.copyWith(
                           color: AppColor.violet
                         ),
                       ),
-                      subtitle: Text(movieDetails.releaseDate, style:
+                      subtitle: Text(
+                        movieDetails.releaseDate, style:
                           ThemeText.vulcanSubtitle1?.copyWith(
                             color: Colors.grey
                           ),
@@ -145,11 +147,12 @@ class BigPoster extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 4.0.sp
                   ,vertical: Sizes.dimen_12.sp),
               child: Text("Cast", style: TextStyle(
-                  color: Colors.grey,
+                  color: AppColor.violet,
                   fontWeight: FontWeight.bold,
-                  fontSize: 14.sp
+                  fontSize:Sizes.dimen_18.sp
               )
               ),),
+
           ),
           SliverToBoxAdapter(
 
