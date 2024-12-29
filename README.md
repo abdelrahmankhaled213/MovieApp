@@ -26,7 +26,7 @@ Engages users with visually appealing graphics  and animations. <br>
 
 ## Offline Support: <br>
 
-Saves selected data for offline access, such as favoritemo and movie details. <br>
+Saves selected data for offline access, such as fav movies and movie details. <br>
 
 # Technical:<br>
 ## Hive (Local Database) <br>
