@@ -40,6 +40,9 @@ Purpose: Manages state efficiently across the app using events and states. <br>
 ## APIs (Backend Integration)
 Purpose: Connects the app to external movie databases (e.g., TMDB) for real-time data . <br>
 
+
+
+
 ![Movie_splash](https://github.com/user-attachments/assets/6504b16f-f37c-4ee1-9964-c5ba5e0642d8) <br>
 
 
